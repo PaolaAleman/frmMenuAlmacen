@@ -10,17 +10,13 @@ using System.Windows.Forms;
 
 namespace frmMenuAlmacen
 {
-    public partial class Form1 : Form
+    public partial class frmRegistroProducto : Form
     {
-        public Form1()
+        public frmRegistroProducto()
         {
             InitializeComponent();
         }
 
-        private void btnMovimientoInventario_Click(object sender, EventArgs e)
-        {
-            MovimientoFrorm ventanaMovimiento = new MovimientoFrorm();
-            ventanaMovimiento.Show(); // Esto "manda a llamar" el formulario
-        }
+       
     }
 }

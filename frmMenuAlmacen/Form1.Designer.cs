@@ -33,7 +33,6 @@
             this.btnMovimientoInventario = new System.Windows.Forms.Button();
             this.btnConsultaProductos = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +61,7 @@
             this.btnMovimientoInventario.TabIndex = 2;
             this.btnMovimientoInventario.Text = "Movimiento (Entrada /Salida)";
             this.btnMovimientoInventario.UseVisualStyleBackColor = true;
+            this.btnMovimientoInventario.Click += new System.EventHandler(this.btnMovimientoInventario_Click);
             // 
             // btnConsultaProductos
             // 
@@ -81,21 +81,11 @@
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(643, 338);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnConsultaProductos);
             this.Controls.Add(this.btnMovimientoInventario);
@@ -115,7 +105,6 @@
         private System.Windows.Forms.Button btnMovimientoInventario;
         private System.Windows.Forms.Button btnConsultaProductos;
         private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.Button btnSalir;
     }
 }
 

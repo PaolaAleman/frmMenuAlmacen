@@ -84,9 +84,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(500, 78);
+            this.btnAgregar.Location = new System.Drawing.Point(84, 347);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(154, 42);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@
             // dgbListaActual
             // 
             this.dgbListaActual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbListaActual.Location = new System.Drawing.Point(435, 139);
+            this.dgbListaActual.Location = new System.Drawing.Point(405, 63);
             this.dgbListaActual.Name = "dgbListaActual";
-            this.dgbListaActual.Size = new System.Drawing.Size(240, 150);
+            this.dgbListaActual.Size = new System.Drawing.Size(335, 336);
             this.dgbListaActual.TabIndex = 6;
             // 
             // label1
@@ -138,7 +138,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 286);
+            this.label5.Location = new System.Drawing.Point(61, 286);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 11;

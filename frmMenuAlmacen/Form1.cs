@@ -16,5 +16,11 @@ namespace frmMenuAlmacen
         {
             InitializeComponent();
         }
+
+        private void btnMovimientoInventario_Click(object sender, EventArgs e)
+        {
+            MovimientoFrorm ventanaMovimiento = new MovimientoFrorm();
+            ventanaMovimiento.Show(); // Esto "manda a llamar" el formulario
+        }
     }
 }

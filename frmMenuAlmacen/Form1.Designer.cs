@@ -61,6 +61,7 @@
             this.btnMovimientoInventario.TabIndex = 2;
             this.btnMovimientoInventario.Text = "Movimiento (Entrada /Salida)";
             this.btnMovimientoInventario.UseVisualStyleBackColor = true;
+            this.btnMovimientoInventario.Click += new System.EventHandler(this.btnMovimientoInventario_Click);
             // 
             // btnConsultaProductos
             // 

@@ -50,16 +50,19 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.txtCodigo, "txtCodigo");
             this.txtCodigo.Name = "txtCodigo";
             // 
             // txtProducto
             // 
+            this.txtProducto.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.txtProducto, "txtProducto");
             this.txtProducto.Name = "txtProducto";
             // 
             // nudPrecio
             // 
+            this.nudPrecio.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.nudPrecio, "nudPrecio");
             this.nudPrecio.Name = "nudPrecio";
             // 
@@ -74,40 +77,48 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Name = "label3";
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Name = "label5";
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Name = "label6";
             // 
             // txtProveedor
             // 
+            this.txtProveedor.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.txtProveedor, "txtProveedor");
             this.txtProveedor.Name = "txtProveedor";
             // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Name = "label7";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
             // 
             // nudCantidad
             // 
+            this.nudCantidad.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.nudCantidad, "nudCantidad");
             this.nudCantidad.Name = "nudCantidad";
             // 
@@ -143,6 +154,7 @@
             this.Controls.Add(this.nudPrecio);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.txtCodigo);
+            this.DoubleBuffered = true;
             this.Name = "frmRegistroProducto";
             this.Load += new System.EventHandler(this.frmRegistroProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();

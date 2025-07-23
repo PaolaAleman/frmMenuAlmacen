@@ -76,7 +76,13 @@ namespace frmMenuAlmacen
             }
         }
 
-        
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Form1 ventanaMovimientos = new Form1();
+            ventanaMovimientos.Show();
+
+            this.Close();
+        }
     }
 }
 

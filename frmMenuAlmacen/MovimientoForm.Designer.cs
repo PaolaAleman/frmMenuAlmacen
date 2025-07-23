@@ -34,7 +34,6 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
@@ -66,7 +65,7 @@
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(191, 284);
+            this.nudCantidad.Location = new System.Drawing.Point(191, 287);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(200, 20);
             this.nudCantidad.TabIndex = 2;
@@ -80,12 +79,14 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(59, 335);
+            this.btnRegistrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRegistrar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrar.Location = new System.Drawing.Point(108, 358);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(155, 38);
             this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // dgvMovimientos
@@ -96,57 +97,53 @@
             this.dgvMovimientos.Size = new System.Drawing.Size(240, 311);
             this.dgvMovimientos.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 100);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(45, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(49, 19);
             this.label2.TabIndex = 7;
             this.label2.Text = "Fecha";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 154);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(45, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
+            this.label3.Size = new System.Drawing.Size(140, 19);
             this.label3.TabIndex = 8;
             this.label3.Text = "Tipo de movimiento";
             // 
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(59, 201);
+            this.Nombre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.Nombre.Location = new System.Drawing.Point(45, 199);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(76, 13);
+            this.Nombre.Size = new System.Drawing.Size(104, 19);
             this.Nombre.TabIndex = 9;
             this.Nombre.Text = "Especificacion";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 284);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(45, 288);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "Cantidad";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 246);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(45, 240);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(61, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "Modelo";
             // 
@@ -168,9 +165,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(330, 21);
+            this.label8.Font = new System.Drawing.Font("Sitka Text", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(288, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.Size = new System.Drawing.Size(178, 39);
             this.label8.TabIndex = 15;
             this.label8.Text = "Movimiento";
             // 
@@ -179,18 +177,20 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(554, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 13);
+            this.label7.Size = new System.Drawing.Size(120, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Registro de movimientos";
+            this.label7.Text = "Historial de movimientos";
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(267, 335);
+            this.btnRegresar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRegresar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.Location = new System.Drawing.Point(629, 442);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(137, 56);
+            this.btnRegresar.Size = new System.Drawing.Size(145, 34);
             this.btnRegresar.TabIndex = 17;
-            this.btnRegresar.Text = "Regresar a pantalla principal";
-            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Text = "Regresar al Inicio";
+            this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // MovimientoFrorm
@@ -208,7 +208,6 @@
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvMovimientos);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.dtpFecha);
@@ -233,7 +232,6 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.DataGridView dgvMovimientos;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Nombre;

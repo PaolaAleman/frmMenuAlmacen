@@ -52,5 +52,13 @@ namespace frmMenuAlmacen
             dgvResultado.Columns.Add("Precio", "Precio");
             dgvResultado.Columns.Add("Cantidad", "Cantidad");
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Form1 ventanaMovimientos = new Form1();
+            ventanaMovimientos.Show();
+
+            this.Close();
+        }
     }
 }

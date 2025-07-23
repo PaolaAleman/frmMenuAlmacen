@@ -70,10 +70,10 @@ namespace frmMenuAlmacen
             // Mostrar los productos existentes si hay alguno
             dgvStock.Rows.Clear();
 
-            foreach (var p in listaProductos)
+            /* foreach (var p in listaProductos)
             {
                 dgvStock.Rows.Add(p.Codigo, p.Nombre, p.Proveedor, p.Precio.ToString("C"), p.Cantidad);
-            }
+            }*/
         }
 
         

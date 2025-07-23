@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace frmMenuAlmacen
 {
     public partial class ConsultarProducto : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
         public ConsultarProducto()
         {
             InitializeComponent();
@@ -25,21 +28,30 @@ namespace frmMenuAlmacen
             {
                 MessageBox.Show("Ingresa un código para buscar.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }string query = "SELECT * FROM Inventario_2024 WHERE marca LIKE @value";
 
-            var resultado = listaProductos.Where(p => p.Codigo.Equals(codigoBuscado, StringComparison.OrdinalIgnoreCase)).ToList();
-            //No la tengo definida y tampococ estoy utilizando una local 
-            dgvResultado.Rows.Clear();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
 
-            if (resultado.Count == 0)
-            {
-                MessageBox.Show("Producto no encontrado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                foreach (var p in resultado)
+                try
                 {
-                    dgvResultado.Rows.Add(p.Codigo, p.Nombre, p.Proveedor, p.Precio.ToString("C"), p.Cantidad);
+                    cmd.Parameters.AddWithValue("@value","%" + codigoBuscado + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        dgvResultado.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Producto no encontrado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }

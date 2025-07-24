@@ -97,9 +97,9 @@
             // dgvMovimientos
             // 
             this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientos.Location = new System.Drawing.Point(498, 100);
+            this.dgvMovimientos.Location = new System.Drawing.Point(415, 100);
             this.dgvMovimientos.Name = "dgvMovimientos";
-            this.dgvMovimientos.Size = new System.Drawing.Size(240, 311);
+            this.dgvMovimientos.Size = new System.Drawing.Size(359, 311);
             this.dgvMovimientos.TabIndex = 5;
             // 
             // label2

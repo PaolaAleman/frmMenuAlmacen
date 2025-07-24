@@ -22,7 +22,7 @@ namespace frmMenuAlmacen
             MovimientoFrorm movimiento = new MovimientoFrorm();
             movimiento.Show();
 
-            this.Close(); // Cierra el formulario principal (Form1)
+            this.Hide(); // Cierra el formulario principal (Form1)
         }
 
         private void btnRegistroProducto_Click(object sender, EventArgs e)
@@ -32,15 +32,15 @@ namespace frmMenuAlmacen
             frmRegistroProducto registro = new frmRegistroProducto();
             registro.Show();
 
-            this.Close(); // Cierra el formulario principal (Form1)
+            this.Hide(); // Cierra el formulario principal (Form1)
         }
 
         private void btnConsultaProductos_Click(object sender, EventArgs e)
         {
-            frmRegistroProducto ConsultarProducto = new frmRegistroProducto();
+            ConsultarProducto ConsultarProducto = new ConsultarProducto();
             ConsultarProducto.Show();
 
-            this.Close(); // Cierra el formulario principal (Form1)
+            this.Hide(); // Cierra el formulario principal (Form1)
         }
 
     }

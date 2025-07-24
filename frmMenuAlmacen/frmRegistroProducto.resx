@@ -435,7 +435,7 @@
     <value>2</value>
   </data>
   <data name="dgvStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 102</value>
+    <value>335, 105</value>
   </data>
   <data name="dgvStock.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 250</value>

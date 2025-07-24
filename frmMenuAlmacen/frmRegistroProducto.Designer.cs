@@ -155,6 +155,7 @@
             this.Controls.Add(this.nudPrecio);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.txtCodigo);
+            this.DoubleBuffered = true;
             this.Name = "frmRegistroProducto";
             this.Load += new System.EventHandler(this.frmRegistroProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();

@@ -28,7 +28,8 @@ namespace frmMenuAlmacen
             {
                 MessageBox.Show("Ingresa un código para buscar.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }string query = "SELECT * FROM Inventario_2024 WHERE marca LIKE @value";
+            }
+            string query = "SELECT * FROM Inventario_2024 WHERE marca LIKE @value";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(query, conn))

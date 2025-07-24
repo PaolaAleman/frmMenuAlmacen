@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovimientoFrorm));
             this.cmbTipoMovimiento = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
@@ -50,6 +51,7 @@
             // 
             // cmbTipoMovimiento
             // 
+            this.cmbTipoMovimiento.BackColor = System.Drawing.Color.Gainsboro;
             this.cmbTipoMovimiento.FormattingEnabled = true;
             this.cmbTipoMovimiento.Location = new System.Drawing.Point(191, 146);
             this.cmbTipoMovimiento.Name = "cmbTipoMovimiento";
@@ -58,6 +60,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNombre.Location = new System.Drawing.Point(191, 198);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
@@ -65,6 +68,7 @@
             // 
             // nudCantidad
             // 
+            this.nudCantidad.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.nudCantidad.Location = new System.Drawing.Point(191, 287);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(200, 20);
@@ -72,6 +76,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
             this.dtpFecha.Location = new System.Drawing.Point(191, 100);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
@@ -83,7 +88,7 @@
             this.btnRegistrar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnRegistrar.Location = new System.Drawing.Point(108, 358);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(155, 38);
+            this.btnRegistrar.Size = new System.Drawing.Size(168, 53);
             this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -100,6 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(45, 102);
             this.label2.Name = "label2";
@@ -110,6 +116,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(45, 146);
             this.label3.Name = "label3";
@@ -120,6 +127,7 @@
             // Nombre
             // 
             this.Nombre.AutoSize = true;
+            this.Nombre.BackColor = System.Drawing.Color.Transparent;
             this.Nombre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.Nombre.Location = new System.Drawing.Point(45, 199);
             this.Nombre.Name = "Nombre";
@@ -130,6 +138,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(45, 288);
             this.label5.Name = "label5";
@@ -140,6 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(45, 240);
             this.label4.Name = "label4";
@@ -149,6 +159,7 @@
             // 
             // txtModelo
             // 
+            this.txtModelo.BackColor = System.Drawing.Color.Gainsboro;
             this.txtModelo.Location = new System.Drawing.Point(191, 239);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(200, 20);
@@ -165,6 +176,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Sitka Text", 20.25F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(288, 18);
             this.label8.Name = "label8";
@@ -175,6 +187,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(554, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 13);
@@ -197,6 +210,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 488);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.label7);

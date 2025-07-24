@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarProducto));
             this.txtBuscarCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,7 +40,8 @@
             // 
             // txtBuscarCodigo
             // 
-            this.txtBuscarCodigo.Location = new System.Drawing.Point(211, 122);
+            this.txtBuscarCodigo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtBuscarCodigo.Location = new System.Drawing.Point(225, 122);
             this.txtBuscarCodigo.Name = "txtBuscarCodigo";
             this.txtBuscarCodigo.Size = new System.Drawing.Size(186, 20);
             this.txtBuscarCodigo.TabIndex = 0;
@@ -47,7 +49,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(250, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 39);
@@ -57,12 +61,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(61, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 19);
+            this.label2.Size = new System.Drawing.Size(158, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Numero de parte ";
+            this.label2.Text = "¿Que estas buscando?";
             // 
             // btnBuscar
             // 
@@ -80,7 +85,7 @@
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultado.Location = new System.Drawing.Point(33, 204);
             this.dgvResultado.Name = "dgvResultado";
-            this.dgvResultado.Size = new System.Drawing.Size(737, 78);
+            this.dgvResultado.Size = new System.Drawing.Size(737, 194);
             this.dgvResultado.TabIndex = 4;
             this.dgvResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.frmConsultarProducto_Load);
             // 
@@ -100,6 +105,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.dgvResultado);

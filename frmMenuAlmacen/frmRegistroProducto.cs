@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +14,13 @@ namespace frmMenuAlmacen
 {
     public partial class frmRegistroProducto : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
         public frmRegistroProducto()
         {
             InitializeComponent();
         }
-        
-            private void btnAgregar_Click(object sender, EventArgs e)
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCodigo.Text) ||
                 string.IsNullOrWhiteSpace(txtProducto.Text) ||
@@ -32,48 +35,12 @@ namespace frmMenuAlmacen
                 MessageBox.Show("El precio y la cantidad deben ser mayores a cero.", "Valores inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            Producto nuevo = new Producto
-            {
-                Codigo = txtCodigo.Text,
-                Nombre = txtProducto.Text,
-                Proveedor = txtProveedor.Text,
-                Precio = nudPrecio.Value,
-                Cantidad = (int)nudCantidad.Value
-            };
-
-
-            // Mostrar en el DataGridView
-            dgvStock.Rows.Add(nuevo.Codigo, nuevo.Nombre, nuevo.Proveedor, nuevo.Precio.ToString("C"), nuevo.Cantidad);
-
-            MessageBox.Show("✔️ Material registrado exitosamente.", "Registro completo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Limpiar campos
-            txtCodigo.Clear();
-            txtProducto.Clear();
-            txtProveedor.Clear();
-            nudPrecio.Value = 0;
-            nudCantidad.Value = 0;
-
-            dgvStock.Rows.Add(nuevo.Codigo, nuevo.Nombre, nuevo.Proveedor, nuevo.Precio.ToString("C"), nuevo.Cantidad);
-
+            nuevoRegistro();
         }
 
         private void frmRegistroProducto_Load(object sender, EventArgs e)
         {
-            dgvStock.Columns.Add("Codigo", "Código");
-            dgvStock.Columns.Add("Nombre", "Producto");
-            dgvStock.Columns.Add("Proveedor", "Proveedor");
-            dgvStock.Columns.Add("Precio", "Precio");
-            dgvStock.Columns.Add("Cantidad", "Cantidad");
-
-            // Mostrar los productos existentes si hay alguno
-            dgvStock.Rows.Clear();
-
-            /* foreach (var p in listaProductos)
-            {
-                dgvStock.Rows.Add(p.Codigo, p.Nombre, p.Proveedor, p.Precio.ToString("C"), p.Cantidad);
-            }*/
+            loadBase();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -82,6 +49,65 @@ namespace frmMenuAlmacen
             ventanaMovimientos.Show();
 
             this.Close();
+        }
+
+        private void loadBase()
+        {
+            string query = "SELECT TOP 10 * FROM Inventario_2024 WHERE fecha is NOT null  ORDER BY fecha";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvStock.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void nuevoRegistro()
+        {
+            string query = "INSERT INTO Inventario_2024 (modelo,especificacion,marca,precio,cantidad,fecha)VALUES (@modelo, @especificacion, @marca, @precio, @cantidad, @fecha)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("@modelo", txtCodigo.Text);
+                    cmd.Parameters.AddWithValue("@especificacion", txtProducto.Text);
+                    cmd.Parameters.AddWithValue("@marca", txtProveedor.Text);
+                    cmd.Parameters.AddWithValue("@precio", nudPrecio.Value);
+                    cmd.Parameters.AddWithValue("@cantidad", nudCantidad.Value);
+                    cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("✔️ Material registrado exitosamente.", "Registro completo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadBase();
+                        // Limpiar campos
+                        txtCodigo.Clear();
+                        txtProducto.Clear();
+                        txtProveedor.Clear();
+                        nudPrecio.Value = 0;
+                        nudCantidad.Value = 0;
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            
+
         }
     }
 }

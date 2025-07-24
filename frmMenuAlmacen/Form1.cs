@@ -43,6 +43,5 @@ namespace frmMenuAlmacen
             this.Hide(); // Cierra el formulario principal (Form1)
         }
 
-        
     }
 }
